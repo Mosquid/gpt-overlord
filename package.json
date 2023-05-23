@@ -1,0 +1,24 @@
+{
+  "name": "gpt-overlord",
+  "version": "1.0.0",
+  "description": "Transform OpenAI ChatGPT into a Versatile API Server",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "local": "ts-node src",
+    "dev": "nodemon src -e ts,json --exec 'yarn run local'"
+  },
+  "repository": "https://github.com/Mosquid/gpt-overlord",
+  "author": "Mosquid",
+  "license": "MIT",
+  "private": false,
+  "devDependencies": {
+    "@types/node": "^20.2.3",
+    "nodemon": "^2.0.22",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.4"
+  },
+  "dependencies": {
+    "openai": "^3.2.1"
+  }
+}
