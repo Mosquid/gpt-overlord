@@ -1,2 +1,2 @@
 # GPT Overlord
-Transform OpenAI Chat-GPT into a Versatile API Server
+Transform OpenAI ChatGPT into a Versatile API Server
