@@ -1,8 +1,8 @@
 {
   "name": "gpt-overlord",
-  "version": "1.0.0",
+  "version": "0.0.2",
   "description": "Transform OpenAI ChatGPT into a Versatile API Server",
-  "main": "index.js",
+  "main": "build/index.js",
   "scripts": {
     "build": "tsc",
     "local": "ts-node src",
