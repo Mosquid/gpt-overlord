@@ -6,12 +6,19 @@ import GPTOverlord from "../src";
 const overlord = new GPTOverlord({
   apiKey: process.env.OPENAI_API_KEY || "",
   model: "gpt-3.5-turbo",
+  temperature: 0,
   schema: {
     status: "success | error",
     data: "..",
   },
 });
 
-overlord.prompt("Who are you?").then((response) => {
-  console.log(response);
-});
+const cities = ["London", "Casablanca", "Cape Town", "Lagos", "Istanbul"];
+
+overlord
+  .prompt(
+    `Filter the list of cities by those located in Africa:${cities.toString()}`
+  )
+  .then((response) => {
+    console.log(response);
+  });
