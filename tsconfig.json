@@ -2,7 +2,7 @@
   "compilerOptions": {
     "target": "es2016",
     "module": "commonjs",
-    "rootDir": "./",
+    "rootDir": "./src/",
     "resolveJsonModule": true, /* in case you are importing JSON files */
     "outDir": "./build",
     "esModuleInterop": true,
@@ -10,5 +10,10 @@
     "strict": true,
     "noImplicitAny": true,
     "skipLibCheck": true,
-  }
+    "declaration": true,
+  },
+  "exclude": [
+    "build",
+    "examples"
+  ]
 }
