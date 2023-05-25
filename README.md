@@ -4,7 +4,7 @@ Transform OpenAI ChatGPT into a Versatile API Server
 
 _Disclaimer: No offense intended. We come in peace, dear AI._
 
-Getting Started
+## Getting Started
 
 ```typescript
 async function main() {
