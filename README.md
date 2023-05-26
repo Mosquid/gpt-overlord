@@ -26,3 +26,5 @@ async function main() {
   console.log(response); // { status: 'success', data: ['Cape Town, Lagos', 'Casablanca'] }
 }
 ```
+
+Learn more from my [medium article](https://mosquid.medium.com/using-chatgpt-as-a-backend-8e675094e7b4)
