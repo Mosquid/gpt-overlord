@@ -1,7 +1,4 @@
-require("dotenv").config();
 import GPTOverlord from "../src";
-
-//todo: remove dotenv before publishing
 
 const overlord = new GPTOverlord({
   apiKey: process.env.OPENAI_API_KEY || "",

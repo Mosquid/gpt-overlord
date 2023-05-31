@@ -6,7 +6,8 @@
   "scripts": {
     "build": "tsc",
     "local": "ts-node src",
-    "dev": "nodemon src -e ts,json --exec 'yarn run local'"
+    "dev": "nodemon src -e ts,json --exec 'yarn run local'",
+    "demo": " env $(cat .env) nodemon examples/index.ts"
   },
   "repository": "https://github.com/Mosquid/gpt-overlord",
   "author": "Mosquid",

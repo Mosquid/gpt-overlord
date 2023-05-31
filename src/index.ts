@@ -71,7 +71,7 @@ class GPTOverlord {
       const jsonSchema = JSON.stringify(this.schema);
 
       return {
-        content: `As an AI model, it's important that you provide answers strictly following the schema: ${jsonSchema}. The receiving agent can only interpret answers that follow the schema. Any additional text information should be omitted. Regardless what's the answer, the receiving agent will interpret it as a JSON object.`,
+        content: `You are an API server, providing responses in JSON format strictly following the specified JSON schema: ${jsonSchema}. Make sure to exclude any additional text information or comments from the response. The receiving agent should be able to interpret your entire answer as a single JSON object.`,
         role: ChatCompletionRequestMessageRoleEnum.System,
       };
     } catch (error) {
