@@ -71,7 +71,13 @@ class GPTOverlord {
       const jsonSchema = JSON.stringify(this.schema);
 
       return {
-        content: `You are an API server, providing responses in JSON format strictly following the specified JSON schema: ${jsonSchema}. Make sure to exclude any additional text information or comments from the response. The receiving agent should be able to interpret your entire answer as a single JSON object.`,
+        // Credits to Olup (https://github.com/olup/zod-chatgpt/blob/master/src/utils.ts)
+        content: `Output a JSON object or array that matches this schema, based on user input. Code only, no comments, no introductory sentence, no codefence block  
+
+        ## Schema  
+        \`\`\`json
+        ${jsonSchema}
+        \`\`\``,
         role: ChatCompletionRequestMessageRoleEnum.System,
       };
     } catch (error) {
@@ -81,9 +87,16 @@ class GPTOverlord {
 
   private parseMessage(message: ChatCompletionResponseMessage) {
     try {
-      const content = JSON.parse(message.content);
+      const regex = /{(?:[^{}]|{[^{}]*})*}/;
+      const { content } = message;
+      const match = content.match(regex);
+      const [json] = match || [];
 
-      return content;
+      if (!json) {
+        return content;
+      }
+
+      return JSON.parse(json);
     } catch (error) {
       return message.content;
     }
